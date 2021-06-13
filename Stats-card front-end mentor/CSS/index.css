@@ -1,0 +1,190 @@
+:root {
+    font-size: 15px;
+    --prim-dark-blue: hsl(233, 47%, 7%);
+    --prim-sat-blue: hsl(244, 38%, 16%);
+    --prim-violet: hsl(277, 64%, 61%);
+    --neu-white: hsl(0, 0%, 100%);
+    --neu-trans-white: hsla(0, 0%, 100%, 0.75);
+    --neu-more-trans-white: hsla(0, 0%, 100%, 0.6);
+    --bg-violet: hsl(277deg, 100%, 50%, 0.42);
+    --bg-light-violet: hsl(293deg, 42%, 35%, 0.24);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Lexend Deca";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--prim-dark-blue);
+    color: var(--neu-white);
+    font-weight: 400;
+}
+
+main {
+    min-width: 600px;
+    z-index: 1;
+    display: flex;
+    margin: 1em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 5.85em 7em 5.85em 5.85em;
+    width: 570px;
+    min-width: 300px;
+    background: var(--prim-sat-blue);
+    border-radius: 10px 0 0 10px;
+}
+
+section h1 {
+    color: var(--neu-white);
+    font-size: 2.25rem;
+    margin-bottom: 0.75em;
+    font-weight: 700;
+}
+
+section h1 span {
+    color: var(--prim-violet);
+}
+
+section .main_content {
+    margin-right: 2em;
+}
+
+section p:first-of-type {
+    color: var(--neu-trans-white);
+    line-height: 1.5em;
+    margin-bottom: 5em;
+}
+
+section ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    letter-spacing: 1px;
+}
+
+section ul h2 {
+    color: var(--neu-white);
+    margin-bottom: 0.3em;
+}
+
+section ul p {
+    font-family: "Lexend Deca", sans-serif;
+    color: var(--neu-more-trans-white);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.header_image {
+    min-height: 10em;
+    width: 540px;
+    min-width: 200px;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    background: url(images/image-header-desktop.jpg) no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    background: var(--bg-violet);
+    height: 100%;
+}
+
+.overlay-2 {
+    background: var(--bg-light-violet);
+    height: 100%;
+    mix-blend-mode: color-burn;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 60px;
+    font-size: 0.75rem;
+    line-height: 20px;
+    text-align: center;
+    color: var(--neu-more-trans-white);
+    margin-bottom: 10px;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--neu-trans-white);
+    font-weight: bold;
+}
+
+.attribution a:hover {
+    color: var(--prim-violet);
+}
+
+@media only screen and (max-width: 1024px) {
+    :root {
+        font-size: 12px;
+    }
+    section {
+        padding: 3em 4.5em 3em 3em;
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    body {
+        flex-direction: column;
+    }
+    main {
+        flex-direction: column-reverse;
+        margin: 10px;
+        min-width: 200px;
+        margin-top: 5em;
+    }
+    section {
+        padding: 0;
+        padding: 3em;
+        width: 300px;
+        border-radius: 0 0 10px 10px;
+    }
+    section h1, section p:first-of-type {
+        text-align: center;
+    }
+    section p:first-of-type {
+        font-size: 1.1rem;
+        margin-bottom: 2em;
+        line-height: 1.75em;
+    }
+    section .main_content {
+        margin-right: 0;
+    }
+    section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    section ul li {
+        margin-bottom: 2em;
+    }
+    section ul h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 0.25em;
+    }
+    section ul p {
+        font-size: 1.05rem;
+    }
+    .header_image {
+        height: 220px;
+        width: 300px;
+        border-radius: 10px 10px 0 0;
+        background: url(images/image-header-mobile.jpg) no-repeat;
+        background-size: contain;
+    }
+    .attribution {
+        position: relative;
+        margin-top: 60px;
+    }
+}
