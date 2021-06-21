@@ -1,0 +1,247 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    ;
+}
+
+body {
+    background-color: rgba(232, 231, 244, 0.3);
+    font-family: "Nunito Sans", sans-serif;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5em 1em;
+}
+
+ul {
+    display: none;
+    list-style-type: none;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1em;
+}
+
+.updates {
+    background-color: #2b2669;
+    color: rgba(255, 255, 255, 0.753);
+    border-radius: 1.8em;
+    font-size: 1em;
+    font-weight: lighter;
+    text-align: center;
+    width: 70%;
+    padding: .5em .6em;
+}
+
+section a[href="learn-more"] {
+    color: rgba(255, 255, 255, 0.753);
+    font-weight: 400;
+}
+
+section h1 {
+    font-size: 2.3em;
+    font-weight: bold;
+    text-align: center;
+    width: 70%;
+    color: #241D6B;
+    margin: 0 1em;
+    margin-top: .4em;
+    margin-bottom: .5em;
+}
+
+section .about {
+    color: #6D6D70;
+    text-align: center;
+    line-height: 1.5em;
+    width: 70%;
+    margin-bottom: .5em;
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+}
+
+section input {
+    height: 3.5em;
+    width: 19em;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: .3em;
+    padding-left: 1.2em;
+    font-size: 1em;
+    color: #E8E7F4;
+    font-family: "Nunito Sans";
+    margin-bottom: .5em;
+}
+
+section a[href="waitlist"] {
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+    background-color: #241D6B;
+    padding: 1em 0;
+    border-radius: .3em;
+    width: 19em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+img {
+    display: none;
+}
+
+footer {
+    margin: 0 5em;
+    text-align: left;
+}
+
+footer p {
+    margin-bottom: 1em;
+    font-weight: 600;
+    color: #6D6D70;
+}
+
+footer svg {
+    margin-bottom: 1em;
+}
+
+.show-links {
+    display: block;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .updates {
+        width: 50%;
+    }
+    section h1 {
+        font-size: 3.5em;
+        width: 80%;
+    }
+    .about {
+        font-size: 1.5em;
+    }
+    .user-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1em;
+    }
+    section a[href="waitlist"] {
+        width: 8em;
+        margin-left: 1em;
+        height: 3.5em;
+    }
+    .user-data input {
+        width: 21.5em;
+    }
+}
+
+@media (min-width:1080px) {
+    body {
+        margin: 1em 1em;
+        display: flex;
+        flex-direction: column;
+    }
+    #button {
+        display: none;
+    }
+    ul {
+        display: flex;
+        flex-grow: 1;
+        max-width: 45%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    nav a {
+        text-decoration: none;
+        color: #5C5B6C;
+    }
+    nav a[href="waitlist"] {
+        font-weight: 400;
+        color: #fff;
+        background-color: #241D6B;
+        padding: 1em 1.2em;
+        border-radius: .3em;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .updates {
+        background-color: #241D6B;
+        border-radius: 1.2em;
+        color: white;
+        font-size: 1em;
+        font-weight: lighter;
+        width: 25%;
+        padding: .4em .4em;
+        padding-right: .7em;
+        margin-top: 4em;
+    }
+    section h1 {
+        font-size: 4em;
+        color: #241D6B;
+        margin-top: 0.4em;
+        font-weight: bold;
+        line-height: 1.4em;
+        text-align: left;
+        margin-left: 0;
+        width: 44%;
+    }
+    section .about {
+        width: 48%;
+        margin-bottom: 1em;
+        margin-left: 0;
+        text-align: left;
+        font-size: 1.2em;
+    }
+    .user-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1em;
+    }
+    section a[href="waitlist"] {
+        width: 8em;
+        margin-left: 1em;
+        height: 3.5em;
+    }
+    .user-data input {
+        width: 21.5em;
+    }
+    footer {
+        margin-top: 5em;
+        margin-left: 1em;
+    }
+    footer p {
+        font-weight: 10em;
+    }
+    footer svg {
+        margin-top: .5em;
+        margin-right: .5em;
+    }
+    img {
+        display: initial;
+        position: absolute;
+        right: 10em;
+        height: 50%;
+        top: 10em;
+    }
+}
