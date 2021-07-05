@@ -176,10 +176,6 @@ body {
     z-index: -1;
 }
 
-#card-1 img {
-    width: 100%;
-}
-
 .list {
     width: 45%;
     display: flex;
@@ -265,10 +261,6 @@ body {
 
 .end {
     margin-bottom: 5em;
-}
-
-.footer {
-    border-top: 10px solid rgb(69, 69, 69);
 }
 
 .footer-links {
@@ -561,7 +553,6 @@ footer a:hover {
     #banner-text h1 {
         font-size: 3em;
         letter-spacing: 1.3px;
-        color: pink;
         width: 13em;
     }
     .netflix-logo {
