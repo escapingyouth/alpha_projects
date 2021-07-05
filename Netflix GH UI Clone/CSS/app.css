@@ -1,0 +1,1090 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 3.125em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 50000;
+}
+
+.netflix-logo {
+    width: 11%;
+}
+
+.head a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(229, 9, 20);
+    padding: .438em 1.063em;
+    border-radius: .188em;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.banner {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 10px solid rgb(34, 34, 34);
+    background: url("Images/showcase.jpg") no-repeat center/cover;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #000, transparent);
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.box {
+    z-index: 50000;
+}
+
+#banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#banner-text h1 {
+    font-size: 4em;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 700;
+    width: 70%;
+}
+
+#banner-text h3 {
+    font-size: 1.563em;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+}
+
+#banner-text p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    font-size: 1em;
+    border: 0.063em solid #8c8c8c;
+    background-color: white;
+    outline: none;
+    color: #000;
+    border-radius: 0 0.125em;
+    padding: 0.4em 0.625em 0 0.5em;
+    width: 28.125em;
+    height: 3.75em;
+    align-items: center;
+    cursor: text;
+}
+
+.search button {
+    color: white;
+    height: 2.15em;
+    border-radius: 2px;
+    background-color: #E50914;
+    font-size: 1.8rem;
+    min-width: 8em;
+    border: none;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: 10px solid rgb(34, 34, 34);
+}
+
+.desc {
+    width: 40%;
+}
+
+.desc h2 {
+    font-size: 3.3rem;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.desc p {
+    font-size: 1.6rem;
+    color: white;
+    width: 75%;
+}
+
+.video-1 {
+    width: 29em;
+    position: relative;
+    left: 71.5em;
+    bottom: 26.5em;
+    z-index: -1;
+}
+
+.video-2 {
+    width: 25em;
+    position: relative;
+    left: 75em;
+    bottom: 29em;
+    z-index: -1;
+}
+
+#card-1 img {
+    width: 100%;
+}
+
+.list {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.border {
+    border-top: 8px rgb(34, 34, 34) solid;
+}
+
+.list h1 {
+    color: #fff;
+    font-size: 3rem;
+    padding: 3rem 0 4rem 0;
+}
+
+.title {
+    background: #303030;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.icon {
+    width: 20px;
+    position: relative;
+}
+
+.icon::before, .icon::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    top: -1.5px;
+}
+
+.icon::after {
+    transform: rotate(90deg);
+    transition: 0.5s linear;
+}
+
+.text {
+    background: #303030;
+    line-height: 35px;
+    margin: 3px 0;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    height: 0;
+    opacity: 0;
+}
+
+.item:target .text {
+    height: auto;
+    opacity: 1;
+    padding: 20px 30px;
+    margin: 0;
+    border-top: 2px solid #000;
+    margin-bottom: 6px;
+}
+
+.item:target .icon::after {
+    transform: rotateY(90deg);
+}
+
+.join-us {
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.end {
+    margin-bottom: 5em;
+}
+
+.footer {
+    border-top: 10px solid rgb(69, 69, 69);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding: 4rem 0;
+    width: 60%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer {
+    padding: 3rem 4rem;
+}
+
+footer li {
+    padding: 7px 0;
+}
+
+footer a {
+    color: #777;
+    text-decoration: none;
+}
+
+footer a:hover {
+    border-bottom: 1px solid #777;
+}
+
+#footer-question {
+    margin: auto;
+    width: 60%;
+    color: #777;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.region {
+    margin: auto;
+    width: 60%;
+    color: #777;
+}
+
+@media (min-width:0px) and (max-width: 500px) {
+    section {
+        width: 100%;
+    }
+    .head a {
+        font-size: 0.7em;
+    }
+    .netflix-logo {
+        width: 25%;
+        margin-right: 7em;
+    }
+    #banner-text h1 {
+        font-size: 1.7em;
+        letter-spacing: 1.3px;
+        width: 16em;
+    }
+    #banner-text h3 {
+        font-size: 1.2em;
+    }
+    #banner-text p {
+        font-size: 1em;
+        padding: 12px 0;
+        width: 60%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 23em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.5em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.3em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .accordion-menu {
+        width: 27em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 1.4em;
+        width: 13em;
+    }
+    .item span {
+        font-size: 0.7em;
+    }
+    .item p {
+        font-size: 1em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 3.6em;
+        font-size: 0.8em;
+    }
+    .region {
+        font-size: 0.9em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:500px) and (max-width:600px) {
+    .head a {
+        font-size: 0.7em;
+    }
+    .netflix-logo {
+        width: 25%;
+        margin-right: 7em;
+    }
+    #banner-text h1 {
+        font-size: 1.7em;
+        letter-spacing: 1.3px;
+        width: 17em;
+    }
+    #banner-text h3 {
+        font-size: 1.3em;
+    }
+    #banner-text p {
+        font-size: 1em;
+        padding: 12px 0;
+        width: 60%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 27em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.5em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 1.4em;
+        width: 13em;
+    }
+    .item span {
+        font-size: 0.7em;
+    }
+    .item p {
+        font-size: 1em;
+    }
+    .accordion-menu {
+        width: 30em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 3.5em;
+        font-size: 0.9em;
+    }
+    .region {
+        font-size: 0.9em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:600px) and (max-width:780px) {
+    .banner {
+        height: 110vh;
+    }
+    #banner-text h1 {
+        font-size: 3em;
+        letter-spacing: 1.3px;
+        color: pink;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 20%;
+        margin-right: 7em;
+    }
+    #banner-text h3 {
+        font-size: 1.7em;
+    }
+    #banner-text p {
+        font-size: 1.2em;
+        padding: 12px 0;
+        width: 65%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 31em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 11em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 34em;
+    }
+    .footer {
+        border-top: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 5em;
+        font-size: 0.9em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:780px) and (max-width:1080px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 3em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 20%;
+        margin-right: 7em;
+    }
+    #banner-text h3 {
+        font-size: 1.7em;
+    }
+    #banner-text p {
+        font-size: 1.2em;
+        padding: 12px 0;
+        width: 65%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 31em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        /* margin-left: 1.7em; */
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 2em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1080px) and (max-width:1350px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 3.8em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 17%;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .accordion-menu {
+        width: 27em;
+    }
+    .footer {
+        border-top: none;
+        margin-left: 5em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 6.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1350px) and (max-width:1550px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 4em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 1em;
+        letter-spacing: 1.2px;
+        text-align: left;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+        text-align: left;
+    }
+    #card-0 img {
+        width: 10.5em;
+    }
+    #card-1 img {
+        width: 10.5em;
+    }
+    #card-2 img {
+        width: 10.5em;
+    }
+    #card-3 img {
+        width: 10.5em;
+    }
+    .accordion-menu {
+        width: 27em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 8.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1550px) and (max-width:1870px) {
+    .banner {
+        height: 130vh;
+    }
+    #banner-text h1 {
+        font-size: 4em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 1em;
+        letter-spacing: 1.2px;
+        text-align: left;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+        text-align: left;
+    }
+    #card-0 img {
+        width: 10.5em;
+    }
+    #card-1 img {
+        width: 10.5em;
+    }
+    #card-2 img {
+        width: 10.5em;
+    }
+    #card-3 img {
+        width: 10.5em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 8.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
