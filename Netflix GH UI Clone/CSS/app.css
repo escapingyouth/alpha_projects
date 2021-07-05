@@ -161,7 +161,7 @@ body {
 }
 
 .video-1 {
-    width: 31em;
+    width: 33em;
     position: relative;
     left: 71.5em;
     bottom: 26.5em;
@@ -997,7 +997,7 @@ footer a:hover {
     }
 }
 
-@media (min-width:1550px) and (max-width:1870px) {
+@media (min-width:1550px) and (max-width:1892px) {
     .banner {
         height: 130vh;
     }
