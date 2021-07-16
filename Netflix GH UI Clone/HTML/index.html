@@ -1,243 +1,1093 @@
-<!DOCTYPE html>
-<html lang="en">
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
-    <title>Netflix Ghana - Watch TV Shows Online, Watch Movies Online</title>
-</head>
+html {
+    min-width: 300px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
-<body>
-    <section class="container">
-        <div class="head">
-            <img src="Images/logo.png" class="netflix-logo" alt="netflix-logo">
-            <a href="#">Sign In</a>
-        </div>
-    </section>
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    min-width: 300px;
+    overflow-x: hidden;
+}
 
-    <section class="banner">
-        <div class="box">
-            <div id="banner-text">
-                <h1>Unlimited movies, TV shows,and more.</h1>
-                <h3>Watch anywhere. Cancel anytime.</h2>
-                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
-            </div>
-            <div class="search">
-                <input type="email" placeholder="Email address">
-                <button id="start">Get Started &gt;</button>
-            </div>
-        </div>
-    </section>
+.head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 3.125em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 50000;
+}
 
+.netflix-logo {
+    width: 11%;
+}
 
-    <section id="card-0" class="cards">
-        <div class="desc">
-            <h2>Enjoy on your TV.</h2>
-            <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
-        </div>
-        <div>
-            <img src="Images/tv.png">
+.head a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(229, 9, 20);
+    padding: .438em 1.063em;
+    border-radius: .188em;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+}
 
+.banner {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 10px solid rgb(34, 34, 34);
+    background: url("Images/showcase.jpg") no-repeat center/cover;
+}
 
-        </div>
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #000, transparent);
+}
 
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top, #000, transparent);
+}
 
+.box {
+    z-index: 50000;
+}
 
-    </section>
-    <div>
-        <video class="video-1" autoplay="" playsinline="" muted="" loop="">
-            <source src="Videos/Enjoy your tv.m4v" type="video/mp4">
-        </video>
-    </div>
+#banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-    <section id="card-1" class="cards">
-        <div class="desc">
-            <h2>Download your shows to watch offline.</h2>
-            <p>Save your favorites easily and always have something to watch.</p>
-        </div>
-        <div>
-            <img src="Images/mobile.jpg">
-        </div>
+#banner-text h1 {
+    font-size: 4em;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 700;
+    width: 70%;
+}
 
-    </section>
+#banner-text h3 {
+    font-size: 1.563em;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+}
 
-    <section id="card-2" class="cards">
-        <div class="desc">
-            <h2>Watch everywhere.</h2>
-            <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
-        </div>
-        <div>
-            <img src="Images/device-pile.png">
-        </div>
-    </section>
-    <div>
-        <video class="video-2" autoplay="" playsinline="" muted="" loop="">
-            <source src="Videos/video-devices.m4v" type="video/mp4">
-        </video>
-    </div>
+#banner-text p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: 20px;
+}
 
-    <section id="card-3" class="cards">
-        <div class="desc">
-            <h2>Create profiles for kids.</h2>
-            <p>Send kids on adventures with their favorite characters in a space made just for them—free with
-                your membership.</p>
-        </div>
-        <div>
-            <img src="Images/kids profile.png">
-        </div>
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    </section>
+.search input {
+    font-size: 1em;
+    border: 0.063em solid #8c8c8c;
+    background-color: white;
+    outline: none;
+    color: #000;
+    border-radius: 0 0.125em;
+    padding: 0.4em 0.625em 0 0.5em;
+    width: 28.125em;
+    height: 3.75em;
+    align-items: center;
+    cursor: text;
+}
 
-    <section class="list">
-        <h1>Frequently Asked Questions</h1>
-        <div class="accordion-menu">
-            <div class="item" id="item1">
-                <a href="#item1" class="title">
-                    <span>What is Netflix?</span>
-                    <i class="icon"></i>
+.search button {
+    color: white;
+    height: 2.15em;
+    border-radius: 2px;
+    background-color: #E50914;
+    font-size: 1.8rem;
+    min-width: 8em;
+    border: none;
+}
 
-                </a>
-                <p class="text">
-                    Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
-                    documentaries, and more on thousands of internet-connected devices.
-                    <br>
-                    <br>
-                    You can watch as much as you want, whenever you want without a single commercial – all for one low
-                    monthly price. There's always something new to discover and new TV shows and movies are added every
-                    week!
-                </p>
-            </div>
-            <div class="item" id="item2">
-                <a href="#item2" class="title">
-                    <span>How much does Netflix cost?</span>
-                    <i class="icon"></i>
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: 10px solid rgb(34, 34, 34);
+}
 
-                </a>
-                <p class="text">
-                    Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed
-                    monthly fee. Plans range from US$7.99 to US$11.99 a month. No extra costs, no contracts.
-                </p>
-            </div>
-            <div class="item" id="item3">
-                <a href="#item3" class="title">
-                    <span>Where can I watch?</span>
-                    <i class="icon"></i>
+.desc {
+    width: 40%;
+}
 
-                </a>
-                <p class="text">
-                    Watch anywhere, anytime, on an unlimited number of devices. Sign in with your Netflix account to
-                    watch instantly on the web at netflix.com from your personal computer or on any internet-connected
-                    device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media
-                    players and game consoles.
-                    <br>
-                    <br>
-                    You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to
-                    watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
-                </p>
-            </div>
-            <div class="item" id="item4">
-                <a href="#item4" class="title">
-                    <span>How do I cancel?</span>
-                    <i class="icon"></i>
+.desc h2 {
+    font-size: 3.3rem;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    color: white;
+}
 
-                </a>
-                <p class="text">
-                    Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your
-                    account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+.desc p {
+    font-size: 1.6rem;
+    color: white;
+    width: 75%;
+}
 
-                </p>
-            </div>
-            <div class="item" id="item5">
-                <a href="#item5" class="title">
-                    <span>What can I watch on Netflix?</span>
-                    <i class="icon"></i>
+.video-1 {
+    width: 33em;
+    position: relative;
+    left: 71.5em;
+    bottom: 26.5em;
+    z-index: -1;
+}
 
-                </a>
-                <p class="text">
-                    Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning
-                    Netflix originals, and more. Watch as much as you want, anytime you want.
-                </p>
-            </div>
-            <div class="item" id="item6">
-                <a href="#item6" class="title">
-                    <span>Is Netflix good for kids?</span>
-                    <i class="icon"></i>
+.video-2 {
+    width: 25em;
+    position: relative;
+    left: 75em;
+    bottom: 29em;
+    z-index: -1;
+}
 
-                </a>
-                <p class="text">
-                    The Netflix Kids experience is included in your membership to give parents control while kids enjoy
-                    family-friendly TV shows and movies in their own space.
-                    <br>
-                    <br>
-                    Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of
-                    content kids can watch and block specific titles you don’t want kids to see.
-            </div>
-            <p class="join-us">Ready to watch? Enter your email to create or restart your membership.</p>
+.list {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
-            <div class="search end">
+.border {
+    border-top: 8px rgb(34, 34, 34) solid;
+}
 
-                <input type="email" name="email" placeholder=" Email address">
-                <button id="start">Get Started &gt;</button>
-            </div>
+.list h1 {
+    color: #fff;
+    font-size: 3rem;
+    padding: 3rem 0 4rem 0;
+}
 
+.title {
+    background: #303030;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-decoration: none;
+}
 
+.icon {
+    width: 20px;
+    position: relative;
+}
 
+.icon::before, .icon::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    top: -1.5px;
+}
 
+.icon::after {
+    transform: rotate(90deg);
+    transition: 0.5s linear;
+}
 
-    </section>
-    <div class="border"></div>
-    <footer class="footer">
-        <div id="footer-question">
-            <a href="#">Questions? Contact us.</a>
-        </div>
+.text {
+    background: #303030;
+    line-height: 35px;
+    margin: 3px 0;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    height: 0;
+    opacity: 0;
+}
 
-        <div class="footer-links">
-            <div id="links-1">
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Speed Test</a></li>
-                </ul>
-            </div>
+.item:target .text {
+    height: auto;
+    opacity: 1;
+    padding: 20px 30px;
+    margin: 0;
+    border-top: 2px solid #000;
+    margin-bottom: 6px;
+}
 
-            <div class="links-2">
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Cookie Preferences</a></li>
-                    <li><a href="#">Legal Notices</a></li>
-                </ul>
-            </div>
+.item:target .icon::after {
+    transform: rotateY(90deg);
+}
 
-            <div class="links-3">
-                <ul>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Ways to Watch</a></li>
-                    <li><a href="#">Corporate Information</a></li>
-                    <li><a href="#">Netflix Originals</a></li>
-                </ul>
-            </div>
+.join-us {
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+}
 
-            <div class="links-4">
-                <ul>
-                    <li><a href="#">Media Center</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
+.end {
+    margin-bottom: 5em;
+}
 
-        </div>
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding: 4rem 0;
+    width: 60%;
+}
 
-        <div class="region">
-            Netflix Ghana
-        </div>
-    </footer>
+ul {
+    list-style-type: none;
+}
 
-</body>
+footer {
+    padding: 3rem 4rem;
+}
 
-</html>
+footer li {
+    padding: 7px 0;
+}
+
+footer a {
+    color: #777;
+    text-decoration: none;
+}
+
+footer a:hover {
+    border-bottom: 1px solid #777;
+}
+
+#footer-question {
+    margin: auto;
+    width: 60%;
+    color: #777;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.region {
+    margin: auto;
+    width: 60%;
+    color: #777;
+}
+
+@media (min-width:0px) and (max-width: 500px) {
+    section {
+        width: 100%;
+    }
+    .head a {
+        font-size: 0.7em;
+    }
+    .netflix-logo {
+        width: 25%;
+        margin-right: 7em;
+    }
+    #banner-text h1 {
+        font-size: 1.7em;
+        letter-spacing: 1.3px;
+        width: 16em;
+    }
+    #banner-text h3 {
+        font-size: 1.2em;
+    }
+    #banner-text p {
+        font-size: 1em;
+        padding: 12px 0;
+        width: 60%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 20em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.5em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.3em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .accordion-menu {
+        width: 22em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 1.4em;
+        width: 13em;
+    }
+    .item span {
+        font-size: 0.7em;
+    }
+    .item p {
+        font-size: 1em;
+    }
+    #footer-question {
+        font-size: 0.9em;
+        margin-bottom: -3em;
+        margin-left: 0;
+        width: 15em
+    }
+    .footer-links {
+        margin-left: 0em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 2.8em;
+        font-size: 0.7em;
+    }
+    .region {
+        font-size: 0.9em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:500px) and (max-width:600px) {
+    .head a {
+        font-size: 0.7em;
+    }
+    .netflix-logo {
+        width: 25%;
+        margin-right: 7em;
+    }
+    #banner-text h1 {
+        font-size: 1.7em;
+        letter-spacing: 1.3px;
+        width: 17em;
+    }
+    #banner-text h3 {
+        font-size: 1.3em;
+    }
+    #banner-text p {
+        font-size: 1em;
+        padding: 12px 0;
+        width: 60%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 27em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.5em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 1.4em;
+        width: 13em;
+    }
+    .item span {
+        font-size: 0.7em;
+    }
+    .item p {
+        font-size: 1em;
+    }
+    .accordion-menu {
+        width: 30em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 3.1em;
+        font-size: 0.9em;
+    }
+    .region {
+        font-size: 0.9em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:600px) and (max-width:780px) {
+    .banner {
+        height: 110vh;
+    }
+    #banner-text h1 {
+        font-size: 3em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 20%;
+        margin-right: 7em;
+    }
+    #banner-text h3 {
+        font-size: 1.7em;
+    }
+    #banner-text p {
+        font-size: 1.2em;
+        padding: 12px 0;
+        width: 65%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 31em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 11em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 34em;
+    }
+    .footer {
+        border-top: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 5em;
+        font-size: 0.9em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:780px) and (max-width:1080px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 3em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 20%;
+        margin-right: 7em;
+    }
+    #banner-text h3 {
+        font-size: 1.7em;
+    }
+    #banner-text p {
+        font-size: 1.2em;
+        padding: 12px 0;
+        width: 65%
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input {
+        width: 31em;
+        margin-bottom: 10px;
+        height: 3em;
+    }
+    .search button {
+        font-size: 1em;
+        width: 0.1em;
+        height: 2.5em;
+        line-height: normal;
+        padding-top: 5px;
+        text-align: centers;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.4em;
+        /* margin-left: 1.7em; */
+        width: 98%;
+    }
+    #card-0 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .footer {
+        border-top: none;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 2em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1080px) and (max-width:1350px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 3.8em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    .netflix-logo {
+        width: 17%;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 0.7em;
+        letter-spacing: 1.2px;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+    }
+    #card-0 img {
+        width: 8.5em;
+    }
+    #card-2 img {
+        width: 8.5em;
+    }
+    #card-3 img {
+        width: 8.5em;
+    }
+    .accordion-menu {
+        width: 27em;
+    }
+    .footer {
+        border-top: none;
+        margin-left: 5em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 6.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1350px) and (max-width:1550px) {
+    .banner {
+        height: 115vh;
+    }
+    #banner-text h1 {
+        font-size: 4em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 1em;
+        letter-spacing: 1.2px;
+        text-align: left;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+        text-align: left;
+    }
+    #card-0 img {
+        width: 10.5em;
+    }
+    #card-1 img {
+        width: 10.5em;
+    }
+    #card-2 img {
+        width: 10.5em;
+    }
+    #card-3 img {
+        width: 10.5em;
+    }
+    .accordion-menu {
+        width: 27em;
+    }
+    .list h1 {
+        font-size: 2.7em;
+        width: 13em;
+        text-align: center;
+    }
+    .item span {
+        font-size: 0.8em;
+    }
+    .item p {
+        font-size: 1.4em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 8.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
+
+@media (min-width:1550px) and (max-width:1892px) {
+    .banner {
+        height: 130vh;
+    }
+    #banner-text h1 {
+        font-size: 4em;
+        letter-spacing: 1.3px;
+        width: 13em;
+    }
+    #card-0 {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #card-1 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-2 {
+        flex-direction: row;
+        text-align: center;
+    }
+    #card-3 {
+        flex-direction: row-reverse;
+        text-align: center;
+    }
+    #card-0, #card-1, #card-2, #card-3, h2 {
+        width: 100%;
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+    .desc {
+        width: 100%;
+    }
+    .desc h2 {
+        width: 90%;
+        font-size: 1em;
+        letter-spacing: 1.2px;
+        text-align: left;
+    }
+    .desc p {
+        font-size: 0.5em;
+        width: 98%;
+        text-align: left;
+    }
+    #card-0 img {
+        width: 10.5em;
+    }
+    #card-1 img {
+        width: 10.5em;
+    }
+    #card-2 img {
+        width: 10.5em;
+    }
+    #card-3 img {
+        width: 10.5em;
+    }
+    .accordion-menu {
+        width: 45em;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    .footer {
+        margin: 0 15em;
+        border: none;
+    }
+    #footer-question {
+        font-size: 1em;
+        margin-bottom: -3em;
+        margin-left: 0;
+    }
+    .footer-links {
+        margin-left: 0.1em;
+        margin-top: 0.1em;
+    }
+    .footer-links ul {
+        margin-right: 8.5em;
+        font-size: 1em;
+        width: 10em;
+    }
+    .region {
+        font-size: 1em;
+        margin-left: 0;
+        margin-top: -2em;
+    }
+    .video-1, .video-2 {
+        display: none;
+    }
+}
